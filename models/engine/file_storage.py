@@ -76,4 +76,13 @@ class FileStorage:
         for object in val_cls:                                  
             if object.id == id:                                 
                 return object                                   
-        return None 
+        return None
+
+    def count(self, cls=None):
+        """This method counts the number of stored objects."""
+        if cls is not None:                                     
+            cls_obj = self.all(cls)                             
+            return len(cls_obj)                                 
+        else:                                                   
+            all_obj = self.all()                                
+            return len(all_obj)  
