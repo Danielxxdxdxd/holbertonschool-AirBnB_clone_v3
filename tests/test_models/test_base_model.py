@@ -110,7 +110,7 @@ class TestBaseModel(unittest.TestCase):
                                  '-[0-9a-f]{12}$')
         self.assertNotEqual(inst1.id, inst2.id)
 
-    def test_to_dict_creates_dict(self):
+    def test_to_dict(self):
         """check method creates a dictionary"""
         my_model = BaseModel()
         my_model.name = "Holberton"
@@ -142,7 +142,7 @@ class TestBaseModel(unittest.TestCase):
         """test that the str method has the correct output"""
         inst = BaseModel()
         string = "[BaseModel] ({}) {}".format(inst.id, inst.__dict__)
-        self.assertEqual(string, str(ins))
+        self.assertEqual(string, str(inst))
 
     @mock.patch('models.storage')
     def test_save(self, mock_storage):
