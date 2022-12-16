@@ -40,7 +40,7 @@ def delete_reviews(review_id):
 
 
 @app_views.route('/places/<place_id>/reviews', methods=['POST'],
-                strict_slashes=False)
+                 strict_slashes=False)
 def create_review(place_id):
     place = storage.get("Place", place_id)
     if not place:
@@ -73,7 +73,7 @@ def update_review(review_id):
             abort(404)
         for k, v in new_dict.items():
             if k not in ["id", "user_id", "place_id", "created_at",
-                            "updated_at"]:
+                         "updated_at"]:
                 setattr(review_obj, k, v)
             review_obj.save()
             return jsonify(review_obj.to_dict()), 200
