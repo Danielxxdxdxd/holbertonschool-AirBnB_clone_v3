@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 """Reviews object that handles all default RESTFul API actions"""
-"""Module at state API"""
-from api.v1.views import app_views
-from flask import jsonify, abort, request
 from models import storage
 from models.user import User
 from models.place import Place
