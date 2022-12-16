@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" holds class User"""
+"""Class User"""
 import models
 from models.base_model import BaseModel, Base
 from os import getenv

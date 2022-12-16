@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """User object that handles all default RESTFul API actions"""
+=======
+"""Module at Places API"""
+from flask import jsonify, abort, request
+from api.v1.views import app_views
+>>>>>>> c432a2b84e11d35a6ca743604e9d3975fffce67b
 from models import storage
 from models.user import User
 from models.city import City

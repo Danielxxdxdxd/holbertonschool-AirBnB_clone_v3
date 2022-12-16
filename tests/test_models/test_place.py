@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the TestPlaceDocs classes
+Test Place Documentation classes
 """
 
 from datetime import datetime
@@ -14,7 +14,7 @@ Place = place.Place
 
 
 class TestPlaceDocs(unittest.TestCase):
-    """Tests to check the documentation and style of Place class"""
+    """Check the documentation and style of Place class"""
     @classmethod
     def setUpClass(cls):
         """Set up for the doc tests"""
