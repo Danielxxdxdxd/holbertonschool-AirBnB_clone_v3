@@ -146,7 +146,8 @@ class TestBaseModel(unittest.TestCase):
 
     @mock.patch('models.storage')
     def test_save(self, mock_storage):
-        """Test that save method updates and calls"""
+        """Test that save method updates 'update_at' and calls
+        'storage.save'"""
         inst = BaseModel()
         old_created_at = inst.created_at
         old_updated_at = inst.updated_at
