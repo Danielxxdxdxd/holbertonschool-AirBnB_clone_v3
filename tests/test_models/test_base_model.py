@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Test BaseModel for expected behavior and documentation"""
+"""Checks documentation and styling for BaseModel"""
 from datetime import datetime
 import inspect
 import models
@@ -12,7 +12,7 @@ module_doc = models.base_model.__doc__
 
 
 class TestBaseModelDocs(unittest.TestCase):
-    """Tests to check the documentation and style of BaseModel class"""
+    """Check the documentation and style of BaseModel class"""
 
     @classmethod
     def setUpClass(self):
@@ -110,8 +110,8 @@ class TestBaseModel(unittest.TestCase):
                                  '-[0-9a-f]{12}$')
         self.assertNotEqual(inst1.id, inst2.id)
 
-    def test_to_dict(self):
-        """Test conversion of object attributes to dictionary for json"""
+    def test_to_dict_creates_dict(self):
+        """check method creates a dictionary"""
         my_model = BaseModel()
         my_model.name = "Holberton"
         my_model.my_number = 89
@@ -128,7 +128,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d['my_number'], 89)
 
     def test_to_dict_values(self):
-        """test that values in dict returned from to_dict are correct"""
+        """values in dict returned from to_dict are correct"""
         t_format = "%Y-%m-%dT%H:%M:%S.%f"
         bm = BaseModel()
         new_d = bm.to_dict()
@@ -142,12 +142,12 @@ class TestBaseModel(unittest.TestCase):
         """test that the str method has the correct output"""
         inst = BaseModel()
         string = "[BaseModel] ({}) {}".format(inst.id, inst.__dict__)
-        self.assertEqual(string, str(inst))
-
+        self.assertEqual(string, str(ins))
+        
     @mock.patch('models.storage')
     def test_save(self, mock_storage):
-        """Test that save method updates `updated_at` and calls
-        `storage.save`"""
+    """Test that save method updates 'updated_at' and calls
+        'storage.save'"""
         inst = BaseModel()
         old_created_at = inst.created_at
         old_updated_at = inst.updated_at
