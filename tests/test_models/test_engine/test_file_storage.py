@@ -127,8 +127,3 @@ class TestFileStorage(unittest.TestCase):
     def test_count(self):
         """test count method"""
         all_cities = models.storage.count('City')
-        city_obj = City(name="Sacramento")
-        models.storage.new(city_obj)
-        models.storage.save()
-        new_obj = models.storage.count('City')
-        self.assertEqual(all_cities + 1, new_obj)
