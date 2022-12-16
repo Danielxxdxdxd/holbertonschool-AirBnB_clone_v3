@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for Places API endpoints"""
+"""Module at Places API"""
 from flask import jsonify, abort, request
 from api.v1.views import app_views
 from models import storage
